@@ -17,6 +17,7 @@ import { Route as FamilyRouteImport } from './routes/family'
 import { Route as FirstAidRouteImport } from './routes/first-aid'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as PeriodRouteImport } from './routes/period'
 import { Route as SosRouteImport } from './routes/sos'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const HospitalsRoute = HospitalsRouteImport.update({
   path: '/hospitals',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PeriodRoute = PeriodRouteImport.update({
+  id: '/period',
+  path: '/period',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SosRoute = SosRouteImport.update({
   id: '/sos',
   path: '/sos',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/first-aid': typeof FirstAidRoute
   '/health': typeof HealthRoute
   '/hospitals': typeof HospitalsRoute
+  '/period': typeof PeriodRoute
   '/sos': typeof SosRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/first-aid': typeof FirstAidRoute
   '/health': typeof HealthRoute
   '/hospitals': typeof HospitalsRoute
+  '/period': typeof PeriodRoute
   '/sos': typeof SosRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/first-aid': typeof FirstAidRoute
   '/health': typeof HealthRoute
   '/hospitals': typeof HospitalsRoute
+  '/period': typeof PeriodRoute
   '/sos': typeof SosRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/first-aid'
     | '/health'
     | '/hospitals'
+    | '/period'
     | '/sos'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/first-aid'
     | '/health'
     | '/hospitals'
+    | '/period'
     | '/sos'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/first-aid'
     | '/health'
     | '/hospitals'
+    | '/period'
     | '/sos'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   FirstAidRoute: typeof FirstAidRoute
   HealthRoute: typeof HealthRoute
   HospitalsRoute: typeof HospitalsRoute
+  PeriodRoute: typeof PeriodRoute
   SosRoute: typeof SosRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HospitalsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/period': {
+      id: '/period'
+      path: '/period'
+      fullPath: '/period'
+      preLoaderRoute: typeof PeriodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sos': {
       id: '/sos'
       path: '/sos'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   FirstAidRoute: FirstAidRoute,
   HealthRoute: HealthRoute,
   HospitalsRoute: HospitalsRoute,
+  PeriodRoute: PeriodRoute,
   SosRoute: SosRoute,
 }
 export const routeTree = rootRouteImport
