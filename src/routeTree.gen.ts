@@ -21,6 +21,7 @@ import { Route as HospitalsRouteImport } from './routes/hospitals'
 import { Route as InsuranceRouteImport } from './routes/insurance'
 import { Route as PeriodRouteImport } from './routes/period'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SosRouteImport } from './routes/sos'
 import { Route as WalletRouteImport } from './routes/wallet'
 import { Route as WellnessRouteImport } from './routes/wellness'
@@ -85,6 +86,11 @@ const ProfileRoute = ProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SosRoute = SosRouteImport.update({
   id: '/sos',
   path: '/sos',
@@ -114,6 +120,7 @@ export interface FileRoutesByFullPath {
   '/insurance': typeof InsuranceRoute
   '/period': typeof PeriodRoute
   '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/sos': typeof SosRoute
   '/wallet': typeof WalletRoute
   '/wellness': typeof WellnessRoute
@@ -131,6 +138,7 @@ export interface FileRoutesByTo {
   '/insurance': typeof InsuranceRoute
   '/period': typeof PeriodRoute
   '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/sos': typeof SosRoute
   '/wallet': typeof WalletRoute
   '/wellness': typeof WellnessRoute
@@ -149,6 +157,7 @@ export interface FileRoutesById {
   '/insurance': typeof InsuranceRoute
   '/period': typeof PeriodRoute
   '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
   '/sos': typeof SosRoute
   '/wallet': typeof WalletRoute
   '/wellness': typeof WellnessRoute
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/insurance'
     | '/period'
     | '/profile'
+    | '/settings'
     | '/sos'
     | '/wallet'
     | '/wellness'
@@ -185,6 +195,7 @@ export interface FileRouteTypes {
     | '/insurance'
     | '/period'
     | '/profile'
+    | '/settings'
     | '/sos'
     | '/wallet'
     | '/wellness'
@@ -202,6 +213,7 @@ export interface FileRouteTypes {
     | '/insurance'
     | '/period'
     | '/profile'
+    | '/settings'
     | '/sos'
     | '/wallet'
     | '/wellness'
@@ -220,6 +232,7 @@ export interface RootRouteChildren {
   InsuranceRoute: typeof InsuranceRoute
   PeriodRoute: typeof PeriodRoute
   ProfileRoute: typeof ProfileRoute
+  SettingsRoute: typeof SettingsRoute
   SosRoute: typeof SosRoute
   WalletRoute: typeof WalletRoute
   WellnessRoute: typeof WellnessRoute
@@ -311,6 +324,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sos': {
       id: '/sos'
       path: '/sos'
@@ -348,6 +368,7 @@ const rootRouteChildren: RootRouteChildren = {
   InsuranceRoute: InsuranceRoute,
   PeriodRoute: PeriodRoute,
   ProfileRoute: ProfileRoute,
+  SettingsRoute: SettingsRoute,
   SosRoute: SosRoute,
   WalletRoute: WalletRoute,
   WellnessRoute: WellnessRoute,
