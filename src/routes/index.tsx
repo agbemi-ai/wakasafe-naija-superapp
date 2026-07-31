@@ -166,7 +166,7 @@ function HomePage() {
             </div>
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3">
-            <Stat label="Rain chance" value={`${weather.rain}%`} hint={<Droplets className="h-3 w-3" /> ? undefined : undefined} />
+            <Stat label="Rain chance" value={`${weather.rain}%`} />
             <Stat label="Wind" value={`${weather.wind} km/h`} />
           </div>
           {weather.rain > 60 ? (
