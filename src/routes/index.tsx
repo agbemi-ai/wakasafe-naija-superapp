@@ -4,7 +4,6 @@ import {
   Siren,
   CloudSun,
   ShieldCheck,
-  Droplets,
   Wind,
   ChevronRight,
   Crown,
