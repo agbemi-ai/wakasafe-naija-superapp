@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiChatRouteImport } from './routes/ai-chat'
 import { Route as BabyRouteImport } from './routes/baby'
 import { Route as FamilyRouteImport } from './routes/family'
 import { Route as HealthRouteImport } from './routes/health'
@@ -19,6 +20,11 @@ import { Route as SosRouteImport } from './routes/sos'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiChatRoute = AiChatRouteImport.update({
+  id: '/ai-chat',
+  path: '/ai-chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BabyRoute = BabyRouteImport.update({
@@ -49,6 +55,7 @@ const SosRoute = SosRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
   '/baby': typeof BabyRoute
   '/family': typeof FamilyRoute
   '/health': typeof HealthRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
   '/baby': typeof BabyRoute
   '/family': typeof FamilyRoute
   '/health': typeof HealthRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
   '/baby': typeof BabyRoute
   '/family': typeof FamilyRoute
   '/health': typeof HealthRoute
@@ -74,14 +83,24 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
+  fullPaths:
+    '/' | '/ai-chat' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
-  id: '__root__' | '/' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
+  to: '/' | '/ai-chat' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-chat'
+    | '/baby'
+    | '/family'
+    | '/health'
+    | '/hospitals'
+    | '/sos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiChatRoute: typeof AiChatRoute
   BabyRoute: typeof BabyRoute
   FamilyRoute: typeof FamilyRoute
   HealthRoute: typeof HealthRoute
@@ -96,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-chat': {
+      id: '/ai-chat'
+      path: '/ai-chat'
+      fullPath: '/ai-chat'
+      preLoaderRoute: typeof AiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/baby': {
@@ -138,6 +164,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiChatRoute: AiChatRoute,
   BabyRoute: BabyRoute,
   FamilyRoute: FamilyRoute,
   HealthRoute: HealthRoute,
