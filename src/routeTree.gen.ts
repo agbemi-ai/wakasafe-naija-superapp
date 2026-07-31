@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BabyRouteImport } from './routes/baby'
 import { Route as FamilyRouteImport } from './routes/family'
 import { Route as HealthRouteImport } from './routes/health'
+import { Route as HospitalsRouteImport } from './routes/hospitals'
 import { Route as SosRouteImport } from './routes/sos'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const HealthRoute = HealthRouteImport.update({
   path: '/health',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HospitalsRoute = HospitalsRouteImport.update({
+  id: '/hospitals',
+  path: '/hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SosRoute = SosRouteImport.update({
   id: '/sos',
   path: '/sos',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/baby': typeof BabyRoute
   '/family': typeof FamilyRoute
   '/health': typeof HealthRoute
+  '/hospitals': typeof HospitalsRoute
   '/sos': typeof SosRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/baby': typeof BabyRoute
   '/family': typeof FamilyRoute
   '/health': typeof HealthRoute
+  '/hospitals': typeof HospitalsRoute
   '/sos': typeof SosRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,15 @@ export interface FileRoutesById {
   '/baby': typeof BabyRoute
   '/family': typeof FamilyRoute
   '/health': typeof HealthRoute
+  '/hospitals': typeof HospitalsRoute
   '/sos': typeof SosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/baby' | '/family' | '/health' | '/sos'
+  fullPaths: '/' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/baby' | '/family' | '/health' | '/sos'
-  id: '__root__' | '/' | '/baby' | '/family' | '/health' | '/sos'
+  to: '/' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
+  id: '__root__' | '/' | '/baby' | '/family' | '/health' | '/hospitals' | '/sos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +85,7 @@ export interface RootRouteChildren {
   BabyRoute: typeof BabyRoute
   FamilyRoute: typeof FamilyRoute
   HealthRoute: typeof HealthRoute
+  HospitalsRoute: typeof HospitalsRoute
   SosRoute: typeof SosRoute
 }
 
@@ -109,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HealthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hospitals': {
+      id: '/hospitals'
+      path: '/hospitals'
+      fullPath: '/hospitals'
+      preLoaderRoute: typeof HospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sos': {
       id: '/sos'
       path: '/sos'
@@ -124,6 +141,7 @@ const rootRouteChildren: RootRouteChildren = {
   BabyRoute: BabyRoute,
   FamilyRoute: FamilyRoute,
   HealthRoute: HealthRoute,
+  HospitalsRoute: HospitalsRoute,
   SosRoute: SosRoute,
 }
 export const routeTree = rootRouteImport
