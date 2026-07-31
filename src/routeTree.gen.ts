@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AiChatRouteImport } from './routes/ai-chat'
 import { Route as BabyRouteImport } from './routes/baby'
+import { Route as CommunityRouteImport } from './routes/community'
 import { Route as DrugsRouteImport } from './routes/drugs'
 import { Route as FamilyRouteImport } from './routes/family'
 import { Route as FirstAidRouteImport } from './routes/first-aid'
@@ -36,6 +37,11 @@ const AiChatRoute = AiChatRouteImport.update({
 const BabyRoute = BabyRouteImport.update({
   id: '/baby',
   path: '/baby',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DrugsRoute = DrugsRouteImport.update({
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ai-chat': typeof AiChatRoute
   '/baby': typeof BabyRoute
+  '/community': typeof CommunityRoute
   '/drugs': typeof DrugsRoute
   '/family': typeof FamilyRoute
   '/first-aid': typeof FirstAidRoute
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ai-chat': typeof AiChatRoute
   '/baby': typeof BabyRoute
+  '/community': typeof CommunityRoute
   '/drugs': typeof DrugsRoute
   '/family': typeof FamilyRoute
   '/first-aid': typeof FirstAidRoute
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/ai-chat': typeof AiChatRoute
   '/baby': typeof BabyRoute
+  '/community': typeof CommunityRoute
   '/drugs': typeof DrugsRoute
   '/family': typeof FamilyRoute
   '/first-aid': typeof FirstAidRoute
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/'
     | '/ai-chat'
     | '/baby'
+    | '/community'
     | '/drugs'
     | '/family'
     | '/first-aid'
@@ -156,6 +166,7 @@ export interface FileRouteTypes {
     | '/'
     | '/ai-chat'
     | '/baby'
+    | '/community'
     | '/drugs'
     | '/family'
     | '/first-aid'
@@ -171,6 +182,7 @@ export interface FileRouteTypes {
     | '/'
     | '/ai-chat'
     | '/baby'
+    | '/community'
     | '/drugs'
     | '/family'
     | '/first-aid'
@@ -187,6 +199,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AiChatRoute: typeof AiChatRoute
   BabyRoute: typeof BabyRoute
+  CommunityRoute: typeof CommunityRoute
   DrugsRoute: typeof DrugsRoute
   FamilyRoute: typeof FamilyRoute
   FirstAidRoute: typeof FirstAidRoute
@@ -220,6 +233,13 @@ declare module '@tanstack/react-router' {
       path: '/baby'
       fullPath: '/baby'
       preLoaderRoute: typeof BabyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/drugs': {
@@ -299,6 +319,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AiChatRoute: AiChatRoute,
   BabyRoute: BabyRoute,
+  CommunityRoute: CommunityRoute,
   DrugsRoute: DrugsRoute,
   FamilyRoute: FamilyRoute,
   FirstAidRoute: FirstAidRoute,
