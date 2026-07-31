@@ -23,10 +23,10 @@ export const Route = createFileRoute("/")({
         content:
           "Your safety score, one-tap SOS, Lagos & Abuja weather and quick access to health, hospital and family tools.",
       },
-      { property: "og:title", content: "WakaSafe AI — Home Dashboard" },
+      { property: "og:title", content: "WakaSafe AI — Home Dashboard for Nigerian Families" },
       {
         property: "og:description",
-        content: "Safety score, emergency SOS, weather and quick actions for Nigeria.",
+        content: "Your safety score, one-tap SOS, Lagos & Abuja weather and quick access to health, hospital and family tools.",
       },
     ],
   }),

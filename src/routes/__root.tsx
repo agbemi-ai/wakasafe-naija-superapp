@@ -82,20 +82,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#10B981" },
-      { title: "WakaSafe AI — Safety, Health & Family App for Nigeria" },
+      { title: "WakaSafe AI — Home Dashboard for Nigerian Families" },
       {
         name: "description",
         content:
-          "WakaSafe AI keeps Nigerian families safe: emergency SOS, hospital finder, health tracking, baby care and family locator in one app.",
+          "Your safety score, one-tap SOS, Lagos & Abuja weather and quick access to health, hospital and family tools.",
       },
       { name: "author", content: "WakaSafe AI" },
-      { property: "og:title", content: "WakaSafe AI — Safety, Health & Family App" },
+      { property: "og:title", content: "WakaSafe AI — Home Dashboard for Nigerian Families" },
       {
         property: "og:description",
-        content: "Emergency SOS, hospital finder, health tracking and family safety for Nigeria.",
+        content: "Your safety score, one-tap SOS, Lagos & Abuja weather and quick access to health, hospital and family tools.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "WakaSafe AI — Home Dashboard for Nigerian Families" },
+      { name: "twitter:description", content: "Your safety score, one-tap SOS, Lagos & Abuja weather and quick access to health, hospital and family tools." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7ef9152-1b76-42ec-b9c3-bea062546c5a/id-preview-38564bd2--13865469-f77b-49bb-84d6-54bad9b29b90.lovable.app-1785477584570.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7ef9152-1b76-42ec-b9c3-bea062546c5a/id-preview-38564bd2--13865469-f77b-49bb-84d6-54bad9b29b90.lovable.app-1785477584570.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
