@@ -14,6 +14,7 @@ import { Route as AiChatRouteImport } from './routes/ai-chat'
 import { Route as BabyRouteImport } from './routes/baby'
 import { Route as DrugsRouteImport } from './routes/drugs'
 import { Route as FamilyRouteImport } from './routes/family'
+import { Route as FirstAidRouteImport } from './routes/first-aid'
 import { Route as HealthRouteImport } from './routes/health'
 import { Route as HospitalsRouteImport } from './routes/hospitals'
 import { Route as SosRouteImport } from './routes/sos'
@@ -43,6 +44,11 @@ const FamilyRoute = FamilyRouteImport.update({
   path: '/family',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FirstAidRoute = FirstAidRouteImport.update({
+  id: '/first-aid',
+  path: '/first-aid',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HealthRoute = HealthRouteImport.update({
   id: '/health',
   path: '/health',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/baby': typeof BabyRoute
   '/drugs': typeof DrugsRoute
   '/family': typeof FamilyRoute
+  '/first-aid': typeof FirstAidRoute
   '/health': typeof HealthRoute
   '/hospitals': typeof HospitalsRoute
   '/sos': typeof SosRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/baby': typeof BabyRoute
   '/drugs': typeof DrugsRoute
   '/family': typeof FamilyRoute
+  '/first-aid': typeof FirstAidRoute
   '/health': typeof HealthRoute
   '/hospitals': typeof HospitalsRoute
   '/sos': typeof SosRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/baby': typeof BabyRoute
   '/drugs': typeof DrugsRoute
   '/family': typeof FamilyRoute
+  '/first-aid': typeof FirstAidRoute
   '/health': typeof HealthRoute
   '/hospitals': typeof HospitalsRoute
   '/sos': typeof SosRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/baby'
     | '/drugs'
     | '/family'
+    | '/first-aid'
     | '/health'
     | '/hospitals'
     | '/sos'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/baby'
     | '/drugs'
     | '/family'
+    | '/first-aid'
     | '/health'
     | '/hospitals'
     | '/sos'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/baby'
     | '/drugs'
     | '/family'
+    | '/first-aid'
     | '/health'
     | '/hospitals'
     | '/sos'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   BabyRoute: typeof BabyRoute
   DrugsRoute: typeof DrugsRoute
   FamilyRoute: typeof FamilyRoute
+  FirstAidRoute: typeof FirstAidRoute
   HealthRoute: typeof HealthRoute
   HospitalsRoute: typeof HospitalsRoute
   SosRoute: typeof SosRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FamilyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/first-aid': {
+      id: '/first-aid'
+      path: '/first-aid'
+      fullPath: '/first-aid'
+      preLoaderRoute: typeof FirstAidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/health': {
       id: '/health'
       path: '/health'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   BabyRoute: BabyRoute,
   DrugsRoute: DrugsRoute,
   FamilyRoute: FamilyRoute,
+  FirstAidRoute: FirstAidRoute,
   HealthRoute: HealthRoute,
   HospitalsRoute: HospitalsRoute,
   SosRoute: SosRoute,
