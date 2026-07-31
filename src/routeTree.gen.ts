@@ -10,33 +10,245 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiChatRouteImport } from './routes/ai-chat'
+import { Route as BabyRouteImport } from './routes/baby'
+import { Route as CommunityRouteImport } from './routes/community'
+import { Route as DrugsRouteImport } from './routes/drugs'
+import { Route as FamilyRouteImport } from './routes/family'
+import { Route as FirstAidRouteImport } from './routes/first-aid'
+import { Route as HealthRouteImport } from './routes/health'
+import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as InsuranceRouteImport } from './routes/insurance'
+import { Route as MoreRouteImport } from './routes/more'
+import { Route as PeriodRouteImport } from './routes/period'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SosRouteImport } from './routes/sos'
+import { Route as WalletRouteImport } from './routes/wallet'
+import { Route as WellnessRouteImport } from './routes/wellness'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiChatRoute = AiChatRouteImport.update({
+  id: '/ai-chat',
+  path: '/ai-chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BabyRoute = BabyRouteImport.update({
+  id: '/baby',
+  path: '/baby',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DrugsRoute = DrugsRouteImport.update({
+  id: '/drugs',
+  path: '/drugs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FamilyRoute = FamilyRouteImport.update({
+  id: '/family',
+  path: '/family',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FirstAidRoute = FirstAidRouteImport.update({
+  id: '/first-aid',
+  path: '/first-aid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealthRoute = HealthRouteImport.update({
+  id: '/health',
+  path: '/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HospitalsRoute = HospitalsRouteImport.update({
+  id: '/hospitals',
+  path: '/hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsuranceRoute = InsuranceRouteImport.update({
+  id: '/insurance',
+  path: '/insurance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoreRoute = MoreRouteImport.update({
+  id: '/more',
+  path: '/more',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PeriodRoute = PeriodRouteImport.update({
+  id: '/period',
+  path: '/period',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SosRoute = SosRouteImport.update({
+  id: '/sos',
+  path: '/sos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WalletRoute = WalletRouteImport.update({
+  id: '/wallet',
+  path: '/wallet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WellnessRoute = WellnessRouteImport.update({
+  id: '/wellness',
+  path: '/wellness',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
+  '/baby': typeof BabyRoute
+  '/community': typeof CommunityRoute
+  '/drugs': typeof DrugsRoute
+  '/family': typeof FamilyRoute
+  '/first-aid': typeof FirstAidRoute
+  '/health': typeof HealthRoute
+  '/hospitals': typeof HospitalsRoute
+  '/insurance': typeof InsuranceRoute
+  '/more': typeof MoreRoute
+  '/period': typeof PeriodRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/sos': typeof SosRoute
+  '/wallet': typeof WalletRoute
+  '/wellness': typeof WellnessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
+  '/baby': typeof BabyRoute
+  '/community': typeof CommunityRoute
+  '/drugs': typeof DrugsRoute
+  '/family': typeof FamilyRoute
+  '/first-aid': typeof FirstAidRoute
+  '/health': typeof HealthRoute
+  '/hospitals': typeof HospitalsRoute
+  '/insurance': typeof InsuranceRoute
+  '/more': typeof MoreRoute
+  '/period': typeof PeriodRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/sos': typeof SosRoute
+  '/wallet': typeof WalletRoute
+  '/wellness': typeof WellnessRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
+  '/baby': typeof BabyRoute
+  '/community': typeof CommunityRoute
+  '/drugs': typeof DrugsRoute
+  '/family': typeof FamilyRoute
+  '/first-aid': typeof FirstAidRoute
+  '/health': typeof HealthRoute
+  '/hospitals': typeof HospitalsRoute
+  '/insurance': typeof InsuranceRoute
+  '/more': typeof MoreRoute
+  '/period': typeof PeriodRoute
+  '/profile': typeof ProfileRoute
+  '/settings': typeof SettingsRoute
+  '/sos': typeof SosRoute
+  '/wallet': typeof WalletRoute
+  '/wellness': typeof WellnessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-chat'
+    | '/baby'
+    | '/community'
+    | '/drugs'
+    | '/family'
+    | '/first-aid'
+    | '/health'
+    | '/hospitals'
+    | '/insurance'
+    | '/more'
+    | '/period'
+    | '/profile'
+    | '/settings'
+    | '/sos'
+    | '/wallet'
+    | '/wellness'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-chat'
+    | '/baby'
+    | '/community'
+    | '/drugs'
+    | '/family'
+    | '/first-aid'
+    | '/health'
+    | '/hospitals'
+    | '/insurance'
+    | '/more'
+    | '/period'
+    | '/profile'
+    | '/settings'
+    | '/sos'
+    | '/wallet'
+    | '/wellness'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-chat'
+    | '/baby'
+    | '/community'
+    | '/drugs'
+    | '/family'
+    | '/first-aid'
+    | '/health'
+    | '/hospitals'
+    | '/insurance'
+    | '/more'
+    | '/period'
+    | '/profile'
+    | '/settings'
+    | '/sos'
+    | '/wallet'
+    | '/wellness'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiChatRoute: typeof AiChatRoute
+  BabyRoute: typeof BabyRoute
+  CommunityRoute: typeof CommunityRoute
+  DrugsRoute: typeof DrugsRoute
+  FamilyRoute: typeof FamilyRoute
+  FirstAidRoute: typeof FirstAidRoute
+  HealthRoute: typeof HealthRoute
+  HospitalsRoute: typeof HospitalsRoute
+  InsuranceRoute: typeof InsuranceRoute
+  MoreRoute: typeof MoreRoute
+  PeriodRoute: typeof PeriodRoute
+  ProfileRoute: typeof ProfileRoute
+  SettingsRoute: typeof SettingsRoute
+  SosRoute: typeof SosRoute
+  WalletRoute: typeof WalletRoute
+  WellnessRoute: typeof WellnessRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +260,140 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-chat': {
+      id: '/ai-chat'
+      path: '/ai-chat'
+      fullPath: '/ai-chat'
+      preLoaderRoute: typeof AiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/baby': {
+      id: '/baby'
+      path: '/baby'
+      fullPath: '/baby'
+      preLoaderRoute: typeof BabyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drugs': {
+      id: '/drugs'
+      path: '/drugs'
+      fullPath: '/drugs'
+      preLoaderRoute: typeof DrugsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/family': {
+      id: '/family'
+      path: '/family'
+      fullPath: '/family'
+      preLoaderRoute: typeof FamilyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/first-aid': {
+      id: '/first-aid'
+      path: '/first-aid'
+      fullPath: '/first-aid'
+      preLoaderRoute: typeof FirstAidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/health': {
+      id: '/health'
+      path: '/health'
+      fullPath: '/health'
+      preLoaderRoute: typeof HealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hospitals': {
+      id: '/hospitals'
+      path: '/hospitals'
+      fullPath: '/hospitals'
+      preLoaderRoute: typeof HospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insurance': {
+      id: '/insurance'
+      path: '/insurance'
+      fullPath: '/insurance'
+      preLoaderRoute: typeof InsuranceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/more': {
+      id: '/more'
+      path: '/more'
+      fullPath: '/more'
+      preLoaderRoute: typeof MoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/period': {
+      id: '/period'
+      path: '/period'
+      fullPath: '/period'
+      preLoaderRoute: typeof PeriodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sos': {
+      id: '/sos'
+      path: '/sos'
+      fullPath: '/sos'
+      preLoaderRoute: typeof SosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wallet': {
+      id: '/wallet'
+      path: '/wallet'
+      fullPath: '/wallet'
+      preLoaderRoute: typeof WalletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wellness': {
+      id: '/wellness'
+      path: '/wellness'
+      fullPath: '/wellness'
+      preLoaderRoute: typeof WellnessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiChatRoute: AiChatRoute,
+  BabyRoute: BabyRoute,
+  CommunityRoute: CommunityRoute,
+  DrugsRoute: DrugsRoute,
+  FamilyRoute: FamilyRoute,
+  FirstAidRoute: FirstAidRoute,
+  HealthRoute: HealthRoute,
+  HospitalsRoute: HospitalsRoute,
+  InsuranceRoute: InsuranceRoute,
+  MoreRoute: MoreRoute,
+  PeriodRoute: PeriodRoute,
+  ProfileRoute: ProfileRoute,
+  SettingsRoute: SettingsRoute,
+  SosRoute: SosRoute,
+  WalletRoute: WalletRoute,
+  WellnessRoute: WellnessRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
