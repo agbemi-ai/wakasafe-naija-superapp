@@ -20,6 +20,7 @@ import { Route as HospitalsRouteImport } from './routes/hospitals'
 import { Route as InsuranceRouteImport } from './routes/insurance'
 import { Route as PeriodRouteImport } from './routes/period'
 import { Route as SosRouteImport } from './routes/sos'
+import { Route as WalletRouteImport } from './routes/wallet'
 import { Route as WellnessRouteImport } from './routes/wellness'
 
 const IndexRoute = IndexRouteImport.update({
@@ -77,6 +78,11 @@ const SosRoute = SosRouteImport.update({
   path: '/sos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WalletRoute = WalletRouteImport.update({
+  id: '/wallet',
+  path: '/wallet',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WellnessRoute = WellnessRouteImport.update({
   id: '/wellness',
   path: '/wellness',
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/insurance': typeof InsuranceRoute
   '/period': typeof PeriodRoute
   '/sos': typeof SosRoute
+  '/wallet': typeof WalletRoute
   '/wellness': typeof WellnessRoute
 }
 export interface FileRoutesByTo {
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/insurance': typeof InsuranceRoute
   '/period': typeof PeriodRoute
   '/sos': typeof SosRoute
+  '/wallet': typeof WalletRoute
   '/wellness': typeof WellnessRoute
 }
 export interface FileRoutesById {
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   '/insurance': typeof InsuranceRoute
   '/period': typeof PeriodRoute
   '/sos': typeof SosRoute
+  '/wallet': typeof WalletRoute
   '/wellness': typeof WellnessRoute
 }
 export interface FileRouteTypes {
@@ -140,6 +149,7 @@ export interface FileRouteTypes {
     | '/insurance'
     | '/period'
     | '/sos'
+    | '/wallet'
     | '/wellness'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -154,6 +164,7 @@ export interface FileRouteTypes {
     | '/insurance'
     | '/period'
     | '/sos'
+    | '/wallet'
     | '/wellness'
   id:
     | '__root__'
@@ -168,6 +179,7 @@ export interface FileRouteTypes {
     | '/insurance'
     | '/period'
     | '/sos'
+    | '/wallet'
     | '/wellness'
   fileRoutesById: FileRoutesById
 }
@@ -183,6 +195,7 @@ export interface RootRouteChildren {
   InsuranceRoute: typeof InsuranceRoute
   PeriodRoute: typeof PeriodRoute
   SosRoute: typeof SosRoute
+  WalletRoute: typeof WalletRoute
   WellnessRoute: typeof WellnessRoute
 }
 
@@ -265,6 +278,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wallet': {
+      id: '/wallet'
+      path: '/wallet'
+      fullPath: '/wallet'
+      preLoaderRoute: typeof WalletRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wellness': {
       id: '/wellness'
       path: '/wellness'
@@ -287,6 +307,7 @@ const rootRouteChildren: RootRouteChildren = {
   InsuranceRoute: InsuranceRoute,
   PeriodRoute: PeriodRoute,
   SosRoute: SosRoute,
+  WalletRoute: WalletRoute,
   WellnessRoute: WellnessRoute,
 }
 export const routeTree = rootRouteImport
