@@ -1,8 +1,8 @@
 # WakaSafe feature cleanup and NAFDAC Verify
 
 ## User-facing changes
-- Remove the retired tools and Health Tracker from the visible feature list and navigation; keep Settings available separately.
-- Simplify Home to the final nine-item list, using the user's choice of which named feature to omit.
+- Remove the retired tools, Health Tracker, and AI Health Chat from the feature list and navigation; keep Settings available separately.
+- Simplify Home to exactly these nine features: Home, SOS Emergency, Family Locator, Hospital Finder, First Aid Guide, Baby Care, Mental Wellness, My Profile / Medical ID, and NAFDAC Verify.
 - Replace Drug Info with NAFDAC Verify: one TYPE field for product name plus NAFDAC number, and one SNAP camera flow with text recognition.
 - Use the same three-result display for both paths, then show the requested NAFDAC information, reporting action, and explanation.
 
